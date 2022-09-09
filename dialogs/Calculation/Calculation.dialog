@@ -1,0 +1,125 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "TdYzPU",
+    "name": "Calculation",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "hmIajW"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "I6WosP"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_I6WosP()}",
+          "invalidPrompt": "",
+          "property": "user.firstNumber",
+          "validations": [],
+          "unrecognizedPrompt": "${NumberInput_UnrecognizedPrompt_I6WosP()}"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "vNnpdP"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_vNnpdP()}",
+          "property": "user.secondNumber",
+          "unrecognizedPrompt": "${NumberInput_UnrecognizedPrompt_vNnpdP()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "E8OufT"
+          },
+          "activity": "${SendActivity_E8OufT()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "sUeHHP",
+            "comment": ""
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "user.choice",
+          "choices": [
+            "Так",
+            "Ні"
+          ],
+          "prompt": "${ChoiceInput_Prompt_sUeHHP()}",
+          "outputFormat": "index"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "H5ilpJ"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.DeleteProperties",
+              "$designer": {
+                "id": "TPCkWn"
+              },
+              "properties": [
+                "user.firstNumber",
+                "user.secondNumber",
+                "user.choice"
+              ]
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "ruhLht"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "wmRJMr"
+              }
+            }
+          ],
+          "condition": "=user.choice == 0"
+        }
+      ]
+    }
+  ],
+  "generator": "Calculation.lg",
+  "recognizer": "Calculation.lu.qna",
+  "id": "Calculation"
+}

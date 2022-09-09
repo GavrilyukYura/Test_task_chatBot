@@ -1,0 +1,45 @@
+[import](common.lg)
+
+# NumberInput_Prompt_I6WosP_text()
+- Введіть перше число
+# NumberInput_Prompt_I6WosP()
+[Activity
+    Text = ${NumberInput_Prompt_I6WosP_text()}
+]
+
+# NumberInput_UnrecognizedPrompt_I6WosP_text()
+- Введене значення не є числом. Спробуйте ще раз
+# NumberInput_UnrecognizedPrompt_I6WosP()
+[Activity
+    Text = ${NumberInput_UnrecognizedPrompt_I6WosP_text()}
+]
+
+# NumberInput_Prompt_vNnpdP_text()
+- Введіть друге число
+# NumberInput_Prompt_vNnpdP()
+[Activity
+    Text = ${NumberInput_Prompt_vNnpdP_text()}
+]
+
+# SendActivity_E8OufT_text()
+- ${user.firstNumber} + ${user.secondNumber} = ${user.firstNumber + user.secondNumber}
+# SendActivity_E8OufT()
+[Activity
+    Text = ${SendActivity_E8OufT_text()}
+]
+
+
+# ChoiceInput_Prompt_sUeHHP()
+[Activity
+    Text = ${ChoiceInput_Prompt_sUeHHP_text()}
+]
+
+# ChoiceInput_Prompt_sUeHHP_text()
+- Хочете підрахувати щось ще?
+# NumberInput_UnrecognizedPrompt_vNnpdP()
+[Activity
+    Text = ${NumberInput_UnrecognizedPrompt_vNnpdP_text()}
+]
+
+# NumberInput_UnrecognizedPrompt_vNnpdP_text()
+- Введене значення не є числом. Спробуйте ще раз

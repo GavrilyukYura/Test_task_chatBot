@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Привіт!
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# TextInput_Prompt_vToQeq()
+[Activity
+    Text = ${TextInput_Prompt_vToQeq_text()}
+]
+
+# TextInput_Prompt_vToQeq_text()
+- Як я можу до вас звертатись?
+# SendActivity_ZPMXOp()
+[Activity
+    Text = ${SendActivity_ZPMXOp_text()}
+]
+
+# SendActivity_ZPMXOp_text()
+- ${user.name} я вмію додавати числа. Зараз продемонстую
+# SendActivity_fWHLCu()
+[Activity
+    Text = ${SendActivity_fWHLCu_text()}
+]
+
+# SendActivity_fWHLCu_text()
+- Бувай!
